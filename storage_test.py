@@ -23,7 +23,7 @@ def main(argv):
       elif opt in ("-i", "--iterations"):
          iterations = int(arg)
       elif opt in ("-s", "--seconds"):
-         seconds = int(arg)
+         seconds = float(arg)
       elif opt in ("-o", "--output"):
          outputfile = arg
 
@@ -33,10 +33,10 @@ def main(argv):
    #summary of the input parameters
    print("********************************\n")
    print("Starting test for storage file %s writing\n" % outputfile)
-   print("Number of iterations: %d\n" % iterations)
-   print("Waiting seconds: %d\n" % seconds)
-   totseconds = int(iterations*seconds)
-   totminutes = int(totseconds/60)
+   print("Number of iterations: %s\n" % str(iterations))
+   print("Waiting seconds: %s\n" % str(seconds))
+   totseconds = float(iterations*seconds)
+   totminutes = float(totseconds/60)
 
    print("Total expected execution time: %d seconds\n" % totseconds)
    print("Total expected execution time: %d minutes\n" % totminutes)
