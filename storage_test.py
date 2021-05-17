@@ -49,9 +49,11 @@ def main(argv):
       ts = time.time()
       sttime = datetime.datetime.fromtimestamp(ts).strftime('%Y%m%d_%H:%M:%S - ')
       print(sttime + "iteration number: %d\n" % (i+1))
+      f = open(outputfile + '%s.log' % (i+1), 'a+')
       f.write(sttime + "iteration number: %d\n" % (i+1))
+      f.close()
       sleep(seconds)
-   f.close()
+   print("execution finished")
 
 
 if __name__== "__main__":
